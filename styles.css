@@ -1,0 +1,13 @@
+h2,h3{
+    color: #5283C2;
+}
+
+@keyframes spin-slow {
+    0% { transform: rotateX(0deg); }
+    100% { transform: rotateX(360deg); }
+}
+.animate-spin-slow {
+    animation: spin-slow 5s linear infinite;
+    transform-origin: center;
+
+}
