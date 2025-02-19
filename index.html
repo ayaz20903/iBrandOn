@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+    <title>iBrandOn</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -13,36 +13,34 @@
 </head>
 
 <body>
-    <!-- <header>
-        <h1 class="text-3xl font-bold underline">
-            Hello world!
-          </h1>
-    </header> -->
     <main>
-        <section class="container mx-auto h-full px-4">
-            <div class="relative ">
+
+        <section class="hero">
+            <div class="relative container mx-auto h-full px-4">
                 <!-- Top Section -->
-                <div class="flex items-center justify-evenly w-full h-screen relative z-10">
-                    <div class="flex flex-col justify-center translate-y-[-6rem]">
-                        <h2 class="text-6xl font-bold"> WE BUILD</h2>
-                        <h2 class="text-6xl font-bold"> WE PROMOTE</h2>
+                <div
+                    class="flex flex-col md:flex-row items-center justify-center md:justify-evenly w-full h-[70vh] md:h-screen  relative z-10">
+                    <div class="flex flex-col justify-center md:translate-y-[-6rem] translate-y-[-45px]">
+                        <h2 class="text-4xl font-bold text-[#65C29C]"> WE BUILD</h2>
+                        <h2 class="text-4xl font-bold text-[#65C29C]"> WE PROMOTE</h2>
                         <h2 class="text-6xl font-bold">YOU GROW!</h2>
                     </div>
-                    <div class="w-1/2">
+                    <div class="w-full md:w-1/2">
                         <img class="" src="/assets/images/web-banner.webp" alt="Main Image">
                     </div>
                 </div>
 
                 <!-- Bottom Image (Partially Hidden) -->
-                <div class="absolute left-0 -bottom-0 md:-bottom-0 ">
+                <div class="hidden md:block absolute left-0 -bottom-0 md:-bottom-0 ">
                     <img class="w-3/4" src="/assets/images/Eternity.png" alt="Hidden Image">
                 </div>
             </div>
         </section>
 
-        <section class="container mx-auto py-32 px-4 text-center">
-            <h2 class="text-7xl font-semibold">We've got your back</h2>
-            <div class="w-4/5 mx-auto mt-20 text-left ">
+        <section
+            class="container mx-auto md:pt-32 pt-0 md:pb-20 pb-12 px-4 text-center bg-[url('/assets/images/hero-bg1.png')] bg-left bg-contain bg-no-repeat">
+            <h2 class="md:text-7xl text-4xl font-semibold">We've got your back</h2>
+            <div class="w-4/5 mx-auto md:mt-14 mt-8 text-left ">
                 <div class="bg-[#DCEAF4] p-5 rounded-md">
                     <p class="text-lg"><span class="font-bold ">A Free Branded App – </span>You will get your own
                         ordering platform with zero upfront investment.</p>
@@ -66,14 +64,13 @@
                         social media management, and print marketing to boost you growth.</p>
                 </div>
             </div>
-            <!-- <i class="fas fa-sync-alt text-gray-600 text-3xl animate-spin-slow"></i> -->
-
         </section>
 
-        <section class="container mx-auto px-4 text-center">
-            <h2 class="text-5xl">Case Study</h2>
-            <div class="flex flex-col md:flex-row align-center justify-center w-3/4 mx-auto my-16">
-                
+        <section
+            class="container mx-auto px-4 md:py-14 py-8 text-center bg-[url('/assets/images/hero-bg.png')] bg-right bg-contain bg-no-repeat">
+            <h2 class="text-5xl font-semibold">Case Study</h2>
+            <div class="flex flex-col md:flex-row align-center justify-center w-3/4 mx-auto my-6 md:my-16">
+
                 <div class="md:mr-10 mr-0 mb-14 md:mb-0">
                     <h3 class="text-3xl my-5">Cake shop</h3>
                     <div class="swiper mySwiper4 w-[250px]">
@@ -207,20 +204,148 @@
             </div>
         </section>
 
-        <section>
+        <section class="container mx-auto px-4 md:py-14 py-10 text-center">
+            <div class="w-fit mx-auto">
+                <h2 class="text-6xl font-bold">Awesome!</h2>
+                <h3 class="text-4xl">Let's dive into the details of your app.</h3>
+            </div>
 
+            <div class="md:mt-14 mt-6 grid md:grid-cols-2 grid-cols-1 ">
 
-            <!-- Swiper JS -->
+                <div
+                    class="md:border-r-2 border-r-0 mb-6 md:mb-0  border-dashed border-[#5283C2] w-[90%] md:w-full mx-auto">
+                    <h3 class="text-2xl font-semibold">
+                        Branded Ordering System
+                    </h3>
+                    <p class="text-xl">Each business gets its own customized app.</p>
+                </div>
+                <div class=" w-[90%] md:w-full mx-auto">
+                    <h3 class="text-2xl font-semibold">
+                        Online Ordering
+                    </h3>
+                    <p class="text-xl">Customers can browse products place orders effortlessly.</p>
+                </div>
+            </div>
+            <div class="md:mt-10 mt-6 grid md:grid-cols-2 grid-cols-1">
+                <div
+                    class="md:border-r-2 border-r-0 mb-6 md:mb-0  border-dashed border-[#5283C2]  w-[90%] md:w-full mx-auto">
+                    <h3 class="text-2xl font-semibold">
+                        Payment Integration
+                    </h3>
+                    <p class="text-xl">Supports card payments, wallets, and cash on delivery.</p>
+                </div>
+                <div class=" w-[90%] md:w-full mx-auto">
+                    <h3 class="text-2xl font-semibold">
+                        Customer Accounts
+                    </h3>
+                    <p class="text-xl">Customers can sign up, track orders, and save preferences.</p>
+                </div>
+            </div>
 
-
-            <!-- Initialize Swiper -->
+            <div class="md:mt-10 mt-6 grid md:grid-cols-2 grid-cols-1">
+                <div
+                    class="md:border-r-2 border-r-0 mb-6 md:mb-0  border-dashed border-[#5283C2] w-[90%] md:w-full mx-auto">
+                    <h3 class="text-2xl font-semibold">
+                        Push Notifications
+                    </h3>
+                    <p class="text-xl"> Send real-time updates on offers, orders, and promotions.</p>
+                </div>
+                <div class=" w-[90%] md:w-full mx-auto">
+                    <h3 class="text-2xl font-semibold">
+                        Loyalty & Discounts
+                    </h3>
+                    <p class="text-xl">Reward repeat customers with discounts and loyalty programs.</p>
+                </div>
+            </div>
         </section>
+
+        <section
+            class="container mx-auto px-4 md:py-14 py-10 text-center bg-[url('/assets/images/hero-bg1.png')] bg-left bg-contain bg-no-repeat">
+            <h2 class="md:text-6xl text-4xl font-bold">What you pay us?</h2>
+            <h3 class="text-3xl md:text-4xl my-3 md:my-6">Simple & Transparent Pricing</h3>
+            <div class="w-full md:w-1/2 mx-auto">
+                <div class=" p-6 md:p-10 bg-[#5283c2db] rounded-[20px] text-white text-center">
+                    <p class="text-5xl">
+                        No upfront costs
+                    </p>
+                    <p class="my-5 text-lg">
+                        Get your own branded app completely free! You only pay a small monthly fee of <span
+                            class="text-2xl">£50</span>, which covers hosting,
+                        maintenance, and support. Unlike third-party platforms, you keep 100% of your revenue with no
+                        hidden
+                        charges.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section
+            class="container mx-auto px-4 md:py-14 py-10 text-center bg-[url('/assets/images/hero-bg.png')] bg-right bg-contain bg-no-repeat">
+            <!-- <div class="grid grid-cols-2 place-content-center"> -->
+                <div class="mx-auto text-center w-full md:w-2/3 ">
+                    <h2 class="md:text-6xl text-4xl font-bold">Need more?</h2>
+                    <h3 class="text-xl md:text-4xl my-3 md:my-6">Upgrade to premium features like advanced analytics,
+                        custom branding, and marketing
+                </div>
+                <div class="w-full flex align-center justify-evenly flex-wrap">
+                    <div class=" p-6 md:my-0 md:my-3 my-3 md:p-7 w-[350px] h-auto text-center flex items-center md:p-10 bg-[#5283c2db] rounded-[20px] text-white text-center">
+                        <div class="  md:w-full  mx-auto">
+                            <h3 class="text-2xl mb-2 font-semibold">
+                                Digital Solutions
+                            </h3>
+                            <p class="text-xl">Custom Website Development</p>
+                        </div>
+                    </div>
+                    <div class=" p-6 md:my-0 md:my-3 my-3 md:p-7 w-[350px] h-auto text-center flex items-center md:p-10 bg-[#5283c2db] rounded-[20px] text-white text-center">
+                        <div class="  md:w-full  mx-auto">
+                            <h3 class="text-2xl mb-2 font-semibold">
+                                Branding & Design
+                            </h3>
+                            <p class="text-xl">Logo Design</p>
+                            <p class="text-xl">Catalog & Brochure Design</p>
+                            <!-- <p class="text-xl">Leaflet & Flyer Creation</p> -->
+                            <p class="text-xl">Business Cards</p>
+                        </div>
+                    </div>
+
+                    <div class=" p-6 md:my-0 md:my-3 my-3 md:p-7 w-[350px] h-auto text-center flex items-center md:p-10 bg-[#5283c2db] rounded-[20px] text-white text-center">
+                        <div class="  md:w-full  mx-auto">
+                            <h3 class="text-2xl mb-2 font-semibold">
+                                Business Growth Services
+                            </h3>
+                            <p class="text-xl">Custom Branding Packages</p>
+                            <p class="text-xl">POS & Payment Solutions</p>
+                            <p class="text-xl">Photography & Videography</p>
+                        </div>
+                    </div>
+
+                    <div class=" p-6 md:my-0 md:my-3 my-3 md:p-7 w-[350px]w-auto h-auto text-center flex items-center md:p-10 bg-[#5283c2db] rounded-[20px] text-white text-center">
+                        <div class="  md:w-full  mx-auto">
+                            <h3 class="text-2xl mb-2 font-semibold">
+                                Marketing & Content
+                            </h3>
+                            <p class="text-xl">Content Writing</p>
+                            <p class="text-xl">Social Media Management</p>
+                            <p class="text-xl">Paid Advertising (Google/Facebook Ads)</p>
+                        </div>
+                    </div>
+                    
+
+
+                </div>
+            <!-- </div> -->
+
+        </section>
+
+
+
     </main>
-    <!-- <footer>
-        <p>&copy; 2025 My Website</p>
-    </footer> -->
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="/script.js"></script>
+
 </body>
 
 </html>

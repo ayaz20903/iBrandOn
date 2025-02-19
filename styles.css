@@ -1,4 +1,14 @@
-h2,h3{
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+body {
+    font-family: "Josefin Sans", sans-serif;
+      /* background-image: url(/assets/images/hero-bg.png), url('/assets/images/hero-bg1.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat; */
+}
+
+h2{
     color: #5283C2;
 }
 
@@ -10,4 +20,11 @@ h2,h3{
     animation: spin-slow 5s linear infinite;
     transform-origin: center;
 
+}
+
+.hero{
+    /* background-image: url(/assets/images/hero-bg.png);
+    background-position: right;
+    background-size: contain;
+    background-repeat: no-repeat; */
 }
