@@ -28,3 +28,21 @@ h2{
     background-size: contain;
     background-repeat: no-repeat; */
 }
+
+
+
+   
+/* .button-primary {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+} */
+
+.price-card:hover .button-primary {
+    color: #ffffff;
+    background-color: #5283C2;
+}   
