@@ -46,3 +46,8 @@ h2{
     color: #ffffff;
     background-color: #5283C2;
 }   
+
+.struggling-container{
+    /* background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(0,152,219,1) 100%); */
+    background:radial-gradient(circle, rgb(255 255 255) 0%, rgb(60 176 227) 30%, rgb(0 152 219) 45%)
+}
