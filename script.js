@@ -53,12 +53,12 @@ function enableScroll() {
   document.body.style.overflow = '';
 }
 
-// window.onload = function() {
-//   setTimeout(function() {
-//       document.getElementById("modal").classList.remove("hidden");
-//       disableScroll();
-//   }, 3000);
-// };
+window.onload = function() {
+  setTimeout(function() {
+      document.getElementById("modal").classList.remove("hidden");
+      disableScroll();
+  }, 3000);
+};
 
 document.getElementById("closeModal").addEventListener("click", function () {
   document.getElementById("modal").classList.add("hidden");
