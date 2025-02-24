@@ -27,6 +27,14 @@ initSwiper(".mySwiper3", 2000);  // Start after 2 sec
 initSwiper(".mySwiper4", 3000);  // Start after 3 sec
 initSwiper(".mySwiper5", 4000);  // Start after 4 sec
 
+var swiper = new Swiper(".webSwiper", {
+  loop: true,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
+
 function disableScroll() {
   document.body.style.overflow = 'hidden';
 }
@@ -46,6 +54,62 @@ document.getElementById("closeModal").addEventListener("click", function () {
   document.getElementById("modal").classList.add("hidden");
   enableScroll();
 });
+
+const openPlanModalBtn = document.querySelectorAll(".openPlanModalBtn");
+        const closePlanModalBtn = document.getElementById("closePlanModalBtn");
+        const modal = document.getElementById("planModal");
+        const selectedPlanInput = document.getElementById("selectedPlan");
+        const selectedPlanLabel = document.getElementById("selectedPlanLabel");
+
+
+        openPlanModalBtn.forEach(button => {
+          button.addEventListener("click", () => {
+              const price = button.getAttribute("data-price");
+              const plan = button.getAttribute("data-plan");
+              const fullPlanDetails = `${price} - ${plan}`;
+
+              // Update modal content
+              // selectedPlanInput.value = fullPlanDetails;
+              selectedPlanLabel.textContent = `Selected Plan: ${fullPlanDetails}`;
+
+              // Show modal
+              modal.classList.remove("hidden");
+          });
+      });
+
+      closePlanModalBtn.addEventListener("click", () => {
+          modal.classList.add("hidden");
+      });
+
+      window.addEventListener("click", (e) => {
+          if (e.target === modal) {
+              modal.classList.add("hidden");
+          }
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("myForm").addEventListener("submit", async function (event) {
+          event.preventDefault(); // Prevent default form submission
+      
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const pack = document.getElementById("selectedPlanLabel").value;
+      
+          const response = await fetch("http://ibrandnow/submit-form", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ name, email, pack })
+          });
+      
+          const result = await response.json();
+          alert(result.message);
+        });
+      });
+      
+      
+
 
 // quiz
 
@@ -93,7 +157,7 @@ function startQuiz(type, baseScore) {
 
   quizzes[type].forEach((item, index) => {
     const questionDiv = document.createElement("div");
-    questionDiv.classList.add("flex", "items-center", "justify-between", "mb-3", "p-10","border", "border-[#5283C2]", "rounded-[25px]", "bg-[#5283c22b]" ,"questionDiv" );
+    questionDiv.classList.add("flex", "items-center", "justify-between", "mb-3", "p-10","border", "border-[#5283C2]", "rounded-[25px]","questionDiv" );
 
     let content = `
       <div class="flex-1">
@@ -120,19 +184,9 @@ function startQuiz(type, baseScore) {
      
     `;
 
-
-
     questionDiv.innerHTML = content;
     quizContainer.appendChild(questionDiv);
   });
-
-  // const totalScoreDiv = document.createElement("div");
-  // totalScoreDiv.classList.add("amount-cal", "w-[200px]", "text-right");
-  // totalScoreDiv.innerHTML = `
-  //   <p class="text-xl text-[#5283C2]">+ £ <span class="individual-score">0</span></p>
-  //   <p class="text-xl font-bold text-[#5283C2]">Total: £ <span class="total-score">${score}</span></p>
-  // `;
-  // quizContainer.appendChild(totalScoreDiv);
 
   attachEventListeners();
 }
@@ -286,136 +340,29 @@ document.querySelectorAll(".tab-btn").forEach(button => {
   });
 });
 
-const monthlyBtn = document.getElementById('monthlyBtn');
-        const yearlyBtn = document.getElementById('yearlyBtn');
-        const monthly = document.getElementById('monthly');
-        const yearly = document.getElementById('yearly');
+// const monthlyBtn = document.getElementById('monthlyBtn');
+//         const yearlyBtn = document.getElementById('yearlyBtn');
+//         const monthly = document.getElementById('monthly');
+//         const yearly = document.getElementById('yearly');
 
-        monthlyBtn.addEventListener('click', () => {
-          monthly.classList.remove('hidden');
-          yearly.classList.add('hidden');
-          monthlyBtn.classList.remove('bg-gray-300', 'text-white');
-          monthlyBtn.classList.add('bg-[#5283C2]','text-white');
-          yearlyBtn.classList.remove('bg-[#5283C2]', 'text-white');
-          yearlyBtn.classList.add('bg-gray-300', 'text-black');
-        });
+//         monthlyBtn.addEventListener('click', () => {
+//           monthly.classList.remove('hidden');
+//           yearly.classList.add('hidden');
+//           monthlyBtn.classList.remove('bg-gray-300', 'text-white');
+//           monthlyBtn.classList.add('bg-[#5283C2]','text-white');
+//           yearlyBtn.classList.remove('bg-[#5283C2]', 'text-white');
+//           yearlyBtn.classList.add('bg-gray-300', 'text-black');
+//         });
 
-        yearlyBtn.addEventListener('click', () => {
-            yearly.classList.remove('hidden');
-            monthly.classList.add('hidden');
-            yearlyBtn.classList.remove('bg-gray-300', 'text-white');
-            yearlyBtn.classList.add('bg-[#5283C2]','text-white');
-            monthlyBtn.classList.remove('bg-[#5283C2]', 'text-white');
-            monthlyBtn.classList.add('bg-gray-300', 'text-black');
-        });
+//         yearlyBtn.addEventListener('click', () => {
+//             yearly.classList.remove('hidden');
+//             monthly.classList.add('hidden');
+//             yearlyBtn.classList.remove('bg-gray-300', 'text-white');
+//             yearlyBtn.classList.add('bg-[#5283C2]','text-white');
+//             monthlyBtn.classList.remove('bg-[#5283C2]', 'text-white');
+//             monthlyBtn.classList.add('bg-gray-300', 'text-black');
+//         });
 
-        const openPlanModalBtn = document.querySelectorAll(".openPlanModalBtn");
-        const closePlanModalBtn = document.getElementById("closePlanModalBtn");
-        const modal = document.getElementById("planModal");
-        const selectedPlanInput = document.getElementById("selectedPlan");
-        const selectedPlanLabel = document.getElementById("selectedPlanLabel");
-
-
-        openPlanModalBtn.forEach(button => {
-          button.addEventListener("click", () => {
-              const price = button.getAttribute("data-price");
-              const plan = button.getAttribute("data-plan");
-              const fullPlanDetails = `${price} - ${plan}`;
-
-              // Update modal content
-              // selectedPlanInput.value = fullPlanDetails;
-              selectedPlanLabel.textContent = `Selected Plan: ${fullPlanDetails}`;
-
-              // Show modal
-              modal.classList.remove("hidden");
-          });
-      });
-
-
-      //   openPlanModalBtn.addEventListener("click", () => {
-      //     const priceDetails = document.getElementById("priceDetails").innerText.trim();
-      //     const planName = document.getElementById("planName").innerText.trim();
-      //     const fullPlanDetails = `${priceDetails} - ${planName}`;
-
-      //     // Set dynamic values
-      //     // selectedPlanInput.value = fullPlanDetails;
-      //     selectedPlanLabel.textContent = `Selected Plan: ${fullPlanDetails}`;
-
-      //     // Show modal
-      //     modal.classList.remove("hidden");
-      // });
-
-      closePlanModalBtn.addEventListener("click", () => {
-          modal.classList.add("hidden");
-      });
-
-      window.addEventListener("click", (e) => {
-          if (e.target === modal) {
-              modal.classList.add("hidden");
-          }
-      });
-
-// function startQuiz(type, baseScore) {
-//   score = baseScore;  // This will set the starting points when "Info Website" is selected
-//   scoreDisplay.textContent = `£${score}`;
-//   quizContainer.innerHTML = "";
-//   quizzes[type].forEach((item, index) => {
-//       const questionDiv = document.createElement("div");
-//       questionDiv.classList.add("mb-3", "p-10", "bg-[#5283C2]", "rounded");
-//       if (item.type === "range") {
-//           questionDiv.innerHTML = `
-//               <p class="text-2xl">${item.question} (5£ per post)</p>
-//               <input type="range" min="${item.min}" max="${item.max}" value="1" class="range-input w-full mt-2" data-points="${item.pointsPerUnit}">
-//               <span class="block mt-2">Selected: <span class="range-value">1</span></span>
-//               <span class="block text-xl text-white">£ <span class="individual-score">${item.pointsPerUnit}</span></span>
-//           `;
-//       } else {
-//           questionDiv.innerHTML = `
-//               <p class="text-2xl">${item.question}</p>
-//               <button class="yes-btn button-primary w-[200px]  px-4 py-2 rounded my-5" data-index="${index}" data-points="${item.points}">Yes</button>
-//               <button class="no-btn button-primary w-[200px] px-4 py-2 rounded my-5 ml-2" data-index="${index}">No</button>
-//               <span class="block text-xl text-white">£ <span class="individual-score">0</span></span>
-//           `;
-//       }
-//       quizContainer.appendChild(questionDiv);
-//   });
-//   attachEventListeners();
-// }
-
-// function attachEventListeners() {
-//   document.querySelectorAll(".yes-btn, .no-btn").forEach(btn => {
-//     btn.addEventListener("click", function () {
-//       const parent = this.parentElement;
-//       const points = parseInt(this.dataset.points) || 0;
-//       const isYes = this.classList.contains("yes-btn");
-//       const scoreElement = parent.querySelector(".individual-score");
-//       const previousPoints = parseInt(scoreElement.textContent);
-
-//       if (isYes) {
-       
-//         score += points - previousPoints;
-//         scoreElement.textContent = points;
-//       } else {
-//         score -= previousPoints;
-//         scoreElement.textContent = 0;
-//       }
-//       scoreDisplay.textContent = score;
-//     });
-//   });
-
-//   document.querySelectorAll(".range-input").forEach(input => {
-//     input.addEventListener("input", function () {
-//       const value = parseInt(this.value);
-//       const pointsPerUnit = parseInt(this.dataset.points);
-//       const totalPoints = value * pointsPerUnit;
-//       this.nextElementSibling.querySelector(".range-value").textContent = value;
-//       this.parentElement.querySelector(".individual-score").textContent = totalPoints;
-//       score = Array.from(document.querySelectorAll(".individual-score"))
-//         .reduce((sum, el) => sum + parseInt(el.textContent), 0);
-//       scoreDisplay.textContent = score;
-//     });
-//   });
-// }
 
 
 
