@@ -1,21 +1,3 @@
-// var swiper = new Swiper(".mySwiper", {
-//     effect: "cube",
-//     grabCursor: true,
-//     autoplay: {
-//         delay: 2000, // 4 seconds
-//         disableOnInteraction: false, // Keeps autoplay running after user interaction
-//       },
-//     cubeEffect: {
-//       shadow: true,
-//       slideShadows: true,
-//       shadowOffset: 20,
-//       shadowScale: 0.94,
-//     },
-//     pagination: {
-//       el: ".swiper-pagination",
-//     },
-//   });
-
 function initSwiper(selector, initialDelay) {
   setTimeout(() => {
     new Swiper(selector, {
@@ -53,12 +35,12 @@ function enableScroll() {
   document.body.style.overflow = '';
 }
 
-window.onload = function() {
-  setTimeout(function() {
-      document.getElementById("modal").classList.remove("hidden");
-      disableScroll();
-  }, 3000);
-};
+// window.onload = function() {
+//   setTimeout(function() {
+//       document.getElementById("modal").classList.remove("hidden");
+//       disableScroll();
+//   }, 3000);
+// };
 
 document.getElementById("closeModal").addEventListener("click", function () {
   document.getElementById("modal").classList.add("hidden");
@@ -111,7 +93,7 @@ function startQuiz(type, baseScore) {
 
   quizzes[type].forEach((item, index) => {
     const questionDiv = document.createElement("div");
-    questionDiv.classList.add("flex", "items-center", "justify-between", "mb-3", "p-10","border", "border-[#5283C2]", "rounded-[25px]", "bg-[#5283c22b]" );
+    questionDiv.classList.add("flex", "items-center", "justify-between", "mb-3", "p-10","border", "border-[#5283C2]", "rounded-[25px]", "bg-[#5283c22b]" ,"questionDiv" );
 
     let content = `
       <div class="flex-1">
@@ -130,16 +112,27 @@ function startQuiz(type, baseScore) {
         }
         ${item.question === "Do you want us to write content for your website?" ? 
         `<button class="detail-btn button-primary w-[100px] px-4 py-2 rounded my-5 ml-2">Detail</button>` : ""}
+            <div class="w-[200px] text-right amount-cal hidden ">
+             <p class="text-xl text-[#5283C2]">+ £ <span class="individual-score">0</span></p>
+             <p class="text-xl font-bold text-[#5283C2]">Total: £ <span class="total-score">${score}</span></p>
+            </div>
       </div>
-      <div class="w-[200px] text-right amount-cal">
-        <p class="text-xl text-[#5283C2]">+ £ <span class="individual-score">0</span></p>
-        <p class="text-xl font-bold text-[#5283C2]">Total: £ <span class="total-score">${score}</span></p>
-      </div>
+     
     `;
+
+
 
     questionDiv.innerHTML = content;
     quizContainer.appendChild(questionDiv);
   });
+
+  // const totalScoreDiv = document.createElement("div");
+  // totalScoreDiv.classList.add("amount-cal", "w-[200px]", "text-right");
+  // totalScoreDiv.innerHTML = `
+  //   <p class="text-xl text-[#5283C2]">+ £ <span class="individual-score">0</span></p>
+  //   <p class="text-xl font-bold text-[#5283C2]">Total: £ <span class="total-score">${score}</span></p>
+  // `;
+  // quizContainer.appendChild(totalScoreDiv);
 
   attachEventListeners();
 }
@@ -213,8 +206,9 @@ function attachEventListeners() {
     <button class="ok-btn button-primary w-[100px] px-4 py-2 rounded my-3">OK</button>
   `;
   
-  const flex1Div = parent.querySelector(".amount-cal");
-  parent.insertBefore(priceDiv, flex1Div);
+  const flex1Div = parent.querySelector(".questionDiv");
+  parent.appendChild(priceDiv);
+  // parent.insertBefore(priceDiv, flex1Div);
 
   const okButton = parent.querySelector(".ok-btn");
   okButton.addEventListener("click", function () {
@@ -314,6 +308,52 @@ const monthlyBtn = document.getElementById('monthlyBtn');
             monthlyBtn.classList.remove('bg-[#5283C2]', 'text-white');
             monthlyBtn.classList.add('bg-gray-300', 'text-black');
         });
+
+        const openPlanModalBtn = document.querySelectorAll(".openPlanModalBtn");
+        const closePlanModalBtn = document.getElementById("closePlanModalBtn");
+        const modal = document.getElementById("planModal");
+        const selectedPlanInput = document.getElementById("selectedPlan");
+        const selectedPlanLabel = document.getElementById("selectedPlanLabel");
+
+
+        openPlanModalBtn.forEach(button => {
+          button.addEventListener("click", () => {
+              const price = button.getAttribute("data-price");
+              const plan = button.getAttribute("data-plan");
+              const fullPlanDetails = `${price} - ${plan}`;
+
+              // Update modal content
+              // selectedPlanInput.value = fullPlanDetails;
+              selectedPlanLabel.textContent = `Selected Plan: ${fullPlanDetails}`;
+
+              // Show modal
+              modal.classList.remove("hidden");
+          });
+      });
+
+
+      //   openPlanModalBtn.addEventListener("click", () => {
+      //     const priceDetails = document.getElementById("priceDetails").innerText.trim();
+      //     const planName = document.getElementById("planName").innerText.trim();
+      //     const fullPlanDetails = `${priceDetails} - ${planName}`;
+
+      //     // Set dynamic values
+      //     // selectedPlanInput.value = fullPlanDetails;
+      //     selectedPlanLabel.textContent = `Selected Plan: ${fullPlanDetails}`;
+
+      //     // Show modal
+      //     modal.classList.remove("hidden");
+      // });
+
+      closePlanModalBtn.addEventListener("click", () => {
+          modal.classList.add("hidden");
+      });
+
+      window.addEventListener("click", (e) => {
+          if (e.target === modal) {
+              modal.classList.add("hidden");
+          }
+      });
 
 // function startQuiz(type, baseScore) {
 //   score = baseScore;  // This will set the starting points when "Info Website" is selected

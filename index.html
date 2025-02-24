@@ -14,7 +14,7 @@
 
 <body>
     <main>
-        <nav class="container px-4 ml-auto py-5">
+        <nav class="container px-4 mx-auto py-5">
             <img class="h-[25px] md:h-[40px]" src="/assets/images/ibrandnow-logo.png" alt="Main Image">
         </nav>
 
@@ -97,7 +97,7 @@
 
         <section
             class="container mx-auto px-4 md:py-14 py-8 text-center bg-[url('/assets/images/hero-bg.png')] bg-right bg-contain bg-no-repeat">
-            <h2 class="md:text-7xl text-4xl font-semibold">Your brand</h2>
+            <h2 class="md:text-6xl text-4xl font-semibold">Your Branded Apple & Android App - Template Below</h2>
             <div class="flex flex-col md:flex-row align-center justify-center w-3/4 mx-auto my-6 md:my-16">
 
                 <div class="">
@@ -353,16 +353,17 @@
 
 
 
-        <section
-            class="container mx-auto px-4 md:py-14 py-10 text-center bg-left bg-contain bg-no-repeat">
+        <section class="container mx-auto px-4 md:py-14 py-10 text-center bg-left bg-contain bg-no-repeat">
             <div>
                 <h2 class="md:text-6xl text-4xl font-bold">What's the catch?
                 </h2>
                 <h3 class="text-3xl md:text-4xl my-3 md:my-6">Simple & Transparent Pricing</h3>
                 <div class="pt-0 p-6 w-80 text-center flex items-center justify-end w-full">
                     <div class="flex justify-center mb-4">
-                        <button id="monthlyBtn" class="px-4 py-2 bg-[#5283C2] text-white rounded-l-lg">Fixed plan</button>
-                        <button id="yearlyBtn" class="px-4 py-2 bg-gray-300 text-black rounded-r-lg">Custom pricing</button>
+                        <button id="monthlyBtn" class="px-4 py-2 bg-[#5283C2] text-white rounded-l-lg">Fixed
+                            plan</button>
+                        <button id="yearlyBtn" class="px-4 py-2 bg-gray-300 text-black rounded-r-lg">Custom
+                            pricing</button>
                     </div>
                 </div>
             </div>
@@ -373,23 +374,25 @@
                         class="price-card border border-[#5283C2]  bg-[#5283C2] text-white rounded-[20px] shadow-md py-8 px-4 text-left hover:bg-white hover:text-[#5283C2] hover:border hover:border-[#5283C2] cursor-pointer transition-all duration-300">
                         <div class='flex flex-col items-start justify-between h-full'>
                             <div>
-                                <div class="text-5xl font-semibold mb-6">£30<span class="text-[14px] md:block">plus
+                                <div id="priceDetails" class="text-5xl font-semibold mb-6">£30<span
+                                        class="text-[14px] md:block">plus
                                         VAT/month</span></div>
 
-                                <h3 class="text-xl font-semibold mb-0">Website Plan</h3>
+                                <h3 id="planName" class="text-xl font-semibold mb-0">Website Plan</h3>
                                 <ul class="list-none mb-8">
                                     <li class="my-2 text-[13px]">✔ Website (upto 5 pages)
                                     </li>
                                     <li class="my-2 text-[13px]">✔ Domain registration</li>
-                                    <li class="my-2 text-[13px]">✔ Hosting on AWS</li>
+                                    <li class="my-2 text-[13px]">✔ Hosting on AWS or Similar</li>
                                     <li class="my-2 text-[13px]">✔ Maintenance</li>
                                     <li class="my-2 text-[13px]">✔ 4 Royalty free images</li>
-                                    <li class="my-2 text-[13px]">✔ Free monthly updates</li>
+                                    <li class="my-2 text-[13px]">✔ 3 Free monthly updates</li>
                                 </ul>
                             </div>
                             <div class='w-full'>
                                 <button
-                                    class="button-primary bg-white text-[#5283c2db] w-full py-2 rounded-md font-bold transition-all duration-300">Choose
+                                    class="openPlanModalBtn button-primary bg-white text-[#5283c2db] w-full py-2 rounded-md font-bold transition-all duration-300"
+                                    data-price="£30 plus VAT/month" data-plan="Website Plan">Choose
                                     Plan</button>
                                 <p class="mt-4 text-center">1 year plan</p>
 
@@ -401,25 +404,28 @@
                         class="price-card border border-[#5283C2]  bg-[#5283C2] text-white rounded-[20px] shadow-md py-8 px-4 text-left hover:bg-white hover:text-[#5283C2] hover:border hover:border-[#5283C2] cursor-pointer transition-all duration-300">
                         <div class='flex flex-col items-start justify-between h-full'>
                             <div>
-                                <div class="text-5xl font-semibold mb-6">£60<span class="text-[14px] md:block">plus
+                                <div id="priceDetails" class="text-5xl font-semibold mb-6">£60<span
+                                        class="text-[14px] md:block">plus
                                         VAT/month</span></div>
 
-                                <h3 class="text-xl font-semibold mb-0">App Plan</h3>
+                                <h3 id="priceName" class="text-xl font-semibold mb-0">App Plan</h3>
                                 <ul class="list-none mb-8">
-                                    <li class="my-2 text-[13px]">✔ Free branded app</li>
-                                    <li class="my-2 text-[13px]">✔ Hosting</li>
+                                    <li class="my-2 text-[13px]">✔ Free Apple App on App store</li>
+                                    <li class="my-2 text-[13px]">✔ Free Android App on Google Play</li>
+                                    <li class="my-2 text-[13px]">✔ Hosting on AWS or Similar</li>
                                     <li class="my-2 text-[13px]">✔ Maintenance</li>
                                     <li class="my-2 text-[13px]">✔ Unlimited orders</li>
-                                    <li class="my-2 text-[13px]">✔ 0% Commission</li>
-                                    <li class="my-2 text-[13px] leading-[22px]">✔ Payment integration with SumUp (Please note: Card
-                                        payment charges on SumUp are not included and will be covered by you.)</li>
+                                    <li class="my-2 text-[13px]">✔ 0% commission on your orders</li>
+                                    <li class="my-2 text-[13px] leading-[22px]">✔ Payment integration with SumUp (Sumup
+                                        card acceptance charges are not included)</li>
                                     <li class="my-2 text-[13px]">✔ Real-time Notifications</li>
                                     <li class="my-2 text-[13px]">✔ Admin panel</li>
                                 </ul>
                             </div>
                             <div class='w-full'>
                                 <button
-                                    class="button-primary bg-white text-[#5283c2db] w-full py-2 rounded-md font-bold transition-all duration-300">Choose
+                                    class=" openPlanModalBtn button-primary bg-white text-[#5283c2db] w-full py-2 rounded-md font-bold transition-all duration-300"
+                                    data-price="£60 plus VAT/month" data-plan="App Plan">Choose
                                     Plan</button>
                                 <p class="mt-4 text-center">1 year plan</p>
 
@@ -431,32 +437,35 @@
                         class="price-card border border-[#5283C2]  bg-[#5283C2] text-white rounded-[20px] shadow-md py-8 px-4 text-left hover:bg-white hover:text-[#5283C2]  cursor-pointer transition-all duration-300">
                         <div class='flex flex-col items-start justify-between h-full'>
                             <div>
-                                <div class="text-5xl font-semibold mb-6">£90<span class="text-base md:block">plus
+                                <div id="priceDetails" class="text-5xl font-semibold mb-6">£90<span
+                                        class="text-base md:block">plus
                                         VAT/month</span></div>
 
-                                <h3 class="text-xl font-semibold mb-0">Hybrid Plan</h3>
+                                <h3 id="priceName" class="text-xl font-semibold mb-0">Hybrid Plan</h3>
                                 <ul class="list-none mb-8">
                                     <li class="my-2 text-[13px]">✔ Website (upto 5 pages)</li>
-                                    <li class="my-2 text-[13px]">✔ Free branded app </li>
+                                    <li class="my-2 text-[13px]">✔ Free Apple App on App store</li>
+                                    <li class="my-2 text-[13px]">✔ Free Android App on Google Play</li>
                                     <li class="my-2 text-[13px]">✔ Domain registration
                                     </li>
-                                    <li class="my-2 text-[13px]">✔ Hosting</li>
+                                    <li class="my-2 text-[13px]">✔ Hosting on AWS or Similar</li>
                                     <li class="my-2 text-[13px]">✔ Maintenance </li>
                                     <li class="my-2 text-[13px]">✔ SEO optimization
                                     </li>
                                     <li class="my-2 text-[13px]">✔ 4 Royalty free images </li>
-                                    <li class="my-2 text-[13px]">✔ Free monthly updates </li>
+                                    <li class="my-2 text-[13px]">✔ 3 Free monthly updates </li>
                                     <li class="my-2 text-[13px]">✔ Unlimited orders</li>
                                     <li class="my-2 text-[13px]">✔ Real-time Notifications</li>
-                                    <li class="my-2 text-[13px]">✔ 0% Commission</li>
-                                    <li class="my-2 text-[13px] leading-[22px]">✔ Payment integration with SumUp (Please note: Card
-                                        payment charges on SumUp are not included and will be covered by you.)</li>
+                                    <li class="my-2 text-[13px]">✔ 0% commission on your orders</li>
+                                    <li class="my-2 text-[13px] leading-[22px]">✔ Payment integration with SumUp (Sumup
+                                        card acceptance charges are not included)</li>
                                     <li class="my-2 text-[13px]">✔ Admin panel</li>
                                 </ul>
                             </div>
                             <div class='w-full'>
                                 <button
-                                    class="button-primary bg-white text-[#5283c2db] w-full py-2 rounded-md font-bold transition-all duration-300">Choose
+                                    class="openPlanModalBtn button-primary bg-white text-[#5283c2db] w-full py-2 rounded-md font-bold transition-all duration-300"
+                                    data-price="£90 plus VAT/month" data-plan="Hybrid Plan">Choose
                                     Plan</button>
                                 <p class="mt-4 text-center">1 year plan</p>
 
@@ -468,28 +477,30 @@
                         class="price-card border border-[#5283C2]  bg-[#5283C2] text-white rounded-[20px] shadow-md py-8 px-4 text-left hover:bg-white hover:text-[#5283C2] border border-[#5283C2] hover:border hover:border-[#5283C2] cursor-pointer transition-all duration-300">
                         <div class='flex flex-col items-start justify-between h-full'>
                             <div>
-                                <div class="text-5xl font-semibold mb-6">£120<span class="text-base md:block">plus
+                                <div id="priceDetails" class="text-5xl font-semibold mb-6">£120<span
+                                        class="text-base md:block">plus
                                         VAT/month</span></div>
 
-                                <h3 class="text-xl font-semibold mb-0">Brand Builder Plan
+                                <h3 id="priceName" class="text-xl font-semibold mb-0">Brand Builder Plan
                                 </h3>
                                 <ul class="list-none mb-8">
                                     <li class="my-2 text-[13px]">✔ Website (upto 5 pages)</li>
-                                    <li class="my-2 text-[13px]">✔ Free branded app </li>
+                                    <li class="my-2 text-[13px]">✔ Free Apple App on App store</li>
+                                    <li class="my-2 text-[13px]">✔ Free Android App on Google Play</li>
                                     <li class="my-2 text-[13px]">✔ Domain registration
                                     </li>
 
-                                    <li class="my-2 text-[13px]">✔ Hosting</li>
+                                    <li class="my-2 text-[13px]">✔ Hosting on AWS or Similar</li>
                                     <li class="my-2 text-[13px]">✔ Maintenance </li>
                                     <li class="my-2 text-[13px]">✔ SEO optimization
                                     </li>
                                     <li class="my-2 text-[13px]">✔ 4 Royalty free images </li>
-                                    <li class="my-2 text-[13px]">✔ Free monthly updates </li>
+                                    <li class="my-2 text-[13px]">✔ 3 Free monthly updates </li>
                                     <li class="my-2 text-[13px]">✔ Unlimited orders</li>
                                     <li class="my-2 text-[13px]">✔ Real-time Notifications</li>
-                                    <li class="my-2 text-[13px]">✔ 0% Commission</li>
-                                    <li class="my-2 text-[13px] leading-[22px]">✔ Payment integration with SumUp (Please note: Card
-                                        payment charges on SumUp are not included and will be covered by you.)</li>
+                                    <li class="my-2 text-[13px]">✔ 0% commission on your orders</li>
+                                    <li class="my-2 text-[13px] leading-[22px]">✔ Payment integration with SumUp (Sumup
+                                        card acceptance charges are not included)</li>
                                     <li class="my-2 text-[13px]">✔ Admin panel</li>
                                     <li class="my-2 text-[13px]">✔ Professional logo design
                                     </li>
@@ -502,7 +513,8 @@
                             </div>
                             <div class='w-full'>
                                 <button
-                                    class="button-primary bg-white text-[#5283c2db] w-full py-2 rounded-md font-bold transition-all duration-300">Choose
+                                    class="openPlanModalBtn button-primary bg-white text-[#5283c2db] w-full py-2 rounded-md font-bold transition-all duration-300"
+                                    data-price="£120 plus VAT/month" data-plan="Brand Builder Plan">Choose
                                     Plan</button>
                                 <p class="mt-4 text-center">1 year plan</p>
 
@@ -514,22 +526,23 @@
                         class="price-card border border-[#5283C2]  bg-[#5283C2] text-white rounded-[20px] shadow-md py-8 px-4 text-left hover:bg-white hover:text-[#5283C2] hover:border hover:border-[#5283C2] cursor-pointer transition-all duration-300">
                         <div class='flex flex-col items-start justify-between h-full'>
                             <div>
-                                <div class="text-5xl font-semibold mb-6">£150<span class="text-[14px] md:block">plus
+                                <div id="priceDetails" class="text-5xl font-semibold mb-6">£150<span
+                                        class="text-[14px] md:block">plus
                                         VAT/month</span></div>
 
-                                <h3 class="text-xl font-semibold mb-0">E-Commerce Plan</h3>
+                                <h3 id="priceName" class="text-xl font-semibold mb-0">E-Commerce Plan</h3>
                                 <ul class="list-none mb-8">
                                     <li class="my-2 text-[13px]">✔ E-commerce website</li>
                                     <li class="my-2 text-[13px]">✔ Product Catalog (upto 100 products)</li>
                                     <li class="my-2 text-[13px]">✔ Domain registration
                                     </li>
-                                    <li class="my-2 text-[13px]">✔ Hosting</li>
+                                    <li class="my-2 text-[13px]">✔ Hosting on AWS or Similar</li>
                                     <li class="my-2 text-[13px]">✔ Maintenance </li>
                                     <li class="my-2 text-[13px]">✔ SEO Optimization</li>
-                                    <li class="my-2 text-[13px]">✔ Free monthly updates</li>
+                                    <li class="my-2 text-[13px]">✔ 3 Free monthly updates</li>
                                     <li class="my-2 text-[13px]">✔ Admin panel</li>
-                                    <li class="my-2 text-[13px] leading-[22px]">✔ Payment integration with SumUp (Please note: Card
-                                        payment charges on SumUp are not included and will be covered by you.)</li>
+                                    <li class="my-2 text-[13px] leading-[22px]">✔ Payment integration with SumUp (Sumup
+                                        card acceptance charges are not included)</li>
                                     <li class="my-2 text-[13px]">✔ Social media links</li>
                                     <li class="my-2 text-[13px]">✔ Professional logo design
                                     </li>
@@ -542,7 +555,8 @@
                             </div>
                             <div class='w-full'>
                                 <button
-                                    class="button-primary bg-white text-[#5283c2db] w-full py-2 rounded-md font-bold transition-all duration-300">Choose
+                                    class="openPlanModalBtn button-primary bg-white text-[#5283c2db] w-full py-2 rounded-md font-bold transition-all duration-300"
+                                    data-price="£150 plus VAT/month" data-plan="E-Commerce Plan">Choose
                                     Plan</button>
                                 <p class="mt-4 text-center">1 year plan</p>
 
@@ -555,28 +569,30 @@
                         class="price-card border border-[#5283C2]  bg-[#5283C2] text-white rounded-[20px] shadow-md py-8 px-4 text-left hover:bg-white hover:text-[#5283C2] hover:border hover:border-[#5283C2] cursor-pointer transition-all duration-300">
                         <div class='flex flex-col items-start justify-between h-full'>
                             <div>
-                                <div class="text-5xl font-semibold mb-6">£200<span class="text-base md:block">plus
+                                <div id="priceDetails" class="text-5xl font-semibold mb-6">£200<span
+                                        class="text-base md:block">plus
                                         VAT/month</span></div>
 
-                                <h3 class="text-xl font-semibold mb-0">Ultimate Growth plan
+                                <h3 id="priceName" class="text-xl font-semibold mb-0">Ultimate Growth plan
                                 </h3>
                                 <ul class="list-none mb-8">
                                     <li class="my-2 text-[13px]">✔ Website (upto 5 pages)</li>
-                                    <li class="my-2 text-[13px]">✔ Free branded app </li>
+                                    <li class="my-2 text-[13px]">✔ Free Apple App on App store</li>
+                                    <li class="my-2 text-[13px]">✔ Free Android App on Google Play</li>
                                     <li class="my-2 text-[13px]">✔ Domain registration
                                     </li>
 
-                                    <li class="my-2 text-[13px]">✔ Hosting</li>
+                                    <li class="my-2 text-[13px]">✔ Hosting on AWS or Similar</li>
                                     <li class="my-2 text-[13px]">✔ Maintenance </li>
                                     <li class="my-2 text-[13px]">✔ SEO optimization
                                     </li>
                                     <li class="my-2 text-[13px]">✔ 4 Royalty free images </li>
-                                    <li class="my-2 text-[13px]">✔ Free monthly updates </li>
+                                    <li class="my-2 text-[13px]">✔ 3 Free monthly updates </li>
                                     <li class="my-2 text-[13px]">✔ Unlimited orders</li>
                                     <li class="my-2 text-[13px]">✔ Real-time Notifications</li>
-                                    <li class="my-2 text-[13px]">✔ 0% Commission</li>
-                                    <li class="my-2 text-[13px] leading-[22px]">✔ Payment integration with SumUp (Please note: Card
-                                        payment charges on SumUp are not included and will be covered by you.)</li>
+                                    <li class="my-2 text-[13px]">✔ 0% commission on your orders</li>
+                                    <li class="my-2 text-[13px] leading-[22px]">✔ Payment integration with SumUp (Sumup
+                                        card acceptance charges are not included)</li>
                                     <li class="my-2 text-[13px]">✔ Admin panel</li>
                                     <li class="my-2 text-[13px]">✔ Professional logo design
                                     </li>
@@ -591,7 +607,8 @@
                             </div>
                             <div class='w-full'>
                                 <button
-                                    class="button-primary bg-white text-[#5283c2db] w-full py-2 rounded-md font-bold transition-all duration-300">Choose
+                                    class="openPlanModalBtn button-primary bg-white text-[#5283c2db] w-full py-2 rounded-md font-bold transition-all duration-300"
+                                    data-price="£200 plus VAT/month" data-plan="Ultimate Growth Plan">Choose
                                     Plan</button>
                                 <p class="mt-4 text-center">1 year plan</p>
 
@@ -615,8 +632,18 @@
                             data-base-score="50">Android
                             App</button>
                     </div>
-                    <div id="quiz-container" class="my-10"></div>
-                    <div class="mt-4 text-3xl font-semibold text-[#5283C2]">Total <span id="score"> £0</span></div>
+
+                    <div class="flex align-center justify-between">
+                        <!-- Quiz Container for Questions (70%) -->
+                        <div id="quiz-container" class="w-7/10 p-6"></div>
+                    
+                        <!-- Total Score Container (30%) -->
+                        <div class="w-3/10 p-6 flex flex-col justify-between order-summery sticky top-[25%]">
+                            <div class="mt-4 text-3xl font-semibold text-[#5283C2]">Total <span id="score"> £0</span></div>
+                        </div>
+                    </div>
+                    <!-- <div id="quiz-container" class="my-10"></div>
+                    <div class="mt-4 text-3xl font-semibold text-[#5283C2]">Total <span id="score"> £0</span></div> -->
                 </div>
             </div>
         </section>
@@ -726,6 +753,34 @@
                     Contact now
                 </button>
                 <button id="closeModal" class="py-2 px-2 md:py-2 md:px-4  rounded-md absolute top-1 right-1">✖</button>
+            </div>
+        </div>
+
+
+        <div id="planModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+            <div class="bg-white p-6 rounded-lg shadow-lg w-96 relative">
+                <button id="closePlanModalBtn" class="absolute top-2 right-3 text-xl font-bold">&times;</button>
+                <h2 class="text-2xl font-semibold mb-4">Enter Your Details</h2>
+
+                <form id="modalForm">
+                    <label class="block mb-2">Name</label>
+                    <input type="text" class="w-full border p-2 rounded mb-4" placeholder="Enter your name">
+
+                    <label class="block mb-2">Phone Number</label>
+                    <input type="tel" class="w-full border p-2 rounded mb-4" placeholder="Enter your number">
+
+                    <label class="block mb-2">Email ID</label>
+                    <input type="email" class="w-full border p-2 rounded mb-4" placeholder="Enter your email">
+
+                    <!-- Dynamic Label -->
+                    <label id="selectedPlanLabel" class="block mb-2 font-semibold">Selected Plan</label>
+                    <!-- <input type="text" id="selectedPlan" class="w-full border p-2 rounded mb-4 bg-gray-100" readonly> -->
+
+                    <button type="submit"
+                        class="bg-[#5283c2db] text-white w-full py-2 rounded-md font-bold transition-all duration-300">
+                        Submit
+                    </button>
+                </form>
             </div>
         </div>
 
