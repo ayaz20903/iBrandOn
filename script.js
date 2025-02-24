@@ -29,6 +29,9 @@ initSwiper(".mySwiper5", 4000);  // Start after 4 sec
 
 var swiper = new Swiper(".webSwiper", {
   loop: true,
+  autoplay: {
+    delay: 3000
+  },
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
