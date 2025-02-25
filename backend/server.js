@@ -22,6 +22,12 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));  // Serve public files
 app.use(cors());
 // Submit form and send verification email
+
+app.get("/", (req, res) => {
+  res.send("Hello World");
+});
+
+
 app.post('/submit-form', async (req, res) => {
   const { name, email } = req.body;
 
