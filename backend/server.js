@@ -18,6 +18,8 @@ const transporter = nodemailer.createTransport({
   }
 });
 
+console.log(transporter);
+
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));  // Serve public files
 app.use(cors());
