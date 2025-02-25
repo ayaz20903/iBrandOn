@@ -37,7 +37,11 @@ app.post('/submit-form', async (req, res) => {
   if (!name || !email) {
     return res.status(400).json({ message: 'Name and Email are required.' });
   }
-
+  try {
+    
+  } catch (error) {
+    
+  }
   const token = crypto.randomBytes(16).toString('hex');
 
   // const db = admin.firestore();
@@ -57,7 +61,7 @@ app.post('/submit-form', async (req, res) => {
     subject: 'Please verify your email',
     text: `Click here to verify: ${verificationLink}`
   };
-
+  console.log(mailOptions)
   transporter.sendMail(mailOptions, (err, info) => {
     if (err) {
       return res.status(500).json({ message: 'Error sending email', error: err });
