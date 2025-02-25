@@ -31,11 +31,10 @@ app.get("/", (req, res) => {
 
 
 app.post('/submit-form', async (req, res) => {
-  const { name, email } = req.body;
+  const { name, email, number } = req.body;
 
-  console.log(name,email)
-  if (!name || !email) {
-    return res.status(400).json({ message: 'Name and Email are required.' });
+  if (!name || !email || !number) {
+    return res.status(400).json({ message: 'Name, Email and Number are required.' });
   }
   try {
     
@@ -50,6 +49,7 @@ app.post('/submit-form', async (req, res) => {
   await tokenRef.set({
     name,
     email,
+    number,
     // createdAt: db.firestore.FieldValue.serverTimestamp(),
   });
 
