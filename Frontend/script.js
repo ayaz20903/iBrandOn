@@ -53,6 +53,16 @@ function enableScroll() {
 //   }, 3000);
 // };
 
+document.addEventListener("DOMContentLoaded", function () {
+
+  // Check if URL ends with 'verifytoken.html'
+  if (window.location.pathname.endsWith("verifytoken.html")) {
+    console.log("Redirecting...");
+    window.location.href = window.location.origin + "/Frontend/index.html"; // Change if needed
+  }
+});
+
+
 document.getElementById("closeModal").addEventListener("click", function () {
   document.getElementById("modal").classList.add("hidden");
   enableScroll();
@@ -97,23 +107,21 @@ const openPlanModalBtn = document.querySelectorAll(".openPlanModalBtn");
           const name = document.getElementById("name").value;
           const number = document.getElementById("number").value;
           const email = document.getElementById("email").value;
-          const pack = document.getElementById("selectedPlanLabel").value;
+          const plan = document.getElementById("selectedPlanLabel").value;
       
           const response = await fetch("https://api.ibrandnow.com/submit-form", {
             method: "POST",
             headers: {
               "Content-Type": "application/json"
             },
-            body: JSON.stringify({ name, number, email, pack })
+            body: JSON.stringify({ name, number, email, plan })
           });
       
           const result = await response.json();
           alert(result.message);
         });
+    
       });
-      
-      
-
 
 // quiz
 

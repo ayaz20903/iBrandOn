@@ -31,9 +31,9 @@ app.get("/", (req, res) => {
 
 
 app.post('/submit-form', async (req, res) => {
-  const { name, email, number } = req.body;
+  const { name, email, number , plan } = req.body;
 
-  if (!name || !email || !number) {
+  if (!name || !email || !number || !plan) {
     return res.status(400).json({ message: 'Name, Email and Number are required.' });
   }
   try {
@@ -50,6 +50,7 @@ app.post('/submit-form', async (req, res) => {
     name,
     email,
     number,
+    plan
     // createdAt: db.firestore.FieldValue.serverTimestamp(),
   });
 
@@ -90,16 +91,18 @@ app.get('/verify', async (req, res) => {
   await db.collection('users').add(userData);
   await tokenRef.delete();
 
-  res.status(200).send(`
-    <html>
-      <head><title>Welcome</title></head>
-      <body>
-        <h1>Welcome, ${userData.name}!</h1>
-        <p>Your email has been successfully verified!</p>
-        <p><a href="/home">Go to your homepage</a></p>
-      </body>
-    </html>
-  `);
+  // res.status(200).send(`
+  //   <html>
+  //     <head><title>Welcome</title></head>
+  //     <body>
+  //       <h1>Welcome, ${userData.name}!</h1>
+  //       <p>Your email has been successfully verified!</p>
+  //       <p><a href="/home">Go to your homepage</a></p>
+  //     </body>
+  //   </html>
+  // `);
+
+  res.status(200).redirect(`/verifytoken.html?token=${token}`);
 });
 
 // Start server
