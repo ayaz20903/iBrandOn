@@ -18,10 +18,18 @@ const transporter = nodemailer.createTransport({
   }
 });
 
+console.log(transporter);
+
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));  // Serve public files
 app.use(cors());
 // Submit form and send verification email
+
+app.get("/", (req, res) => {
+  res.send("Hello World");
+});
+
+
 app.post('/submit-form', async (req, res) => {
   const { name, email } = req.body;
 
@@ -29,7 +37,11 @@ app.post('/submit-form', async (req, res) => {
   if (!name || !email) {
     return res.status(400).json({ message: 'Name and Email are required.' });
   }
-
+  try {
+    
+  } catch (error) {
+    
+  }
   const token = crypto.randomBytes(16).toString('hex');
 
   // const db = admin.firestore();
@@ -41,7 +53,7 @@ app.post('/submit-form', async (req, res) => {
     // createdAt: db.firestore.FieldValue.serverTimestamp(),
   });
 
-  const verificationLink = `http://ibrandnow/verify?token=dsffuishf`;
+  const verificationLink = `https://api.ibrandnow.com/verify?token=${token}`;
 
   const mailOptions = {
     from: process.env.EMAIL_USER,
@@ -49,7 +61,7 @@ app.post('/submit-form', async (req, res) => {
     subject: 'Please verify your email',
     text: `Click here to verify: ${verificationLink}`
   };
-
+  console.log(mailOptions)
   transporter.sendMail(mailOptions, (err, info) => {
     if (err) {
       return res.status(500).json({ message: 'Error sending email', error: err });
@@ -91,7 +103,7 @@ app.get('/verify', async (req, res) => {
 });
 
 // Start server
-app.listen(3000, () => {
+app.listen(3010, () => {
   console.log('Server is running on http://localhost:3000');
   console.log()
 });

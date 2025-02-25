@@ -99,7 +99,7 @@ const openPlanModalBtn = document.querySelectorAll(".openPlanModalBtn");
           const email = document.getElementById("email").value;
           const pack = document.getElementById("selectedPlanLabel").value;
       
-          const response = await fetch("http://ibrandnow/submit-form", {
+          const response = await fetch("https://api.ibrandnow.com/submit-form", {
             method: "POST",
             headers: {
               "Content-Type": "application/json"
