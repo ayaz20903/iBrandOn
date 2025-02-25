@@ -47,7 +47,7 @@ app.post('/submit-form', async (req, res) => {
     // createdAt: db.firestore.FieldValue.serverTimestamp(),
   });
 
-  const verificationLink = `http://ibrandnow/verify?token=dsffuishf`;
+  const verificationLink = `https://api.ibrandnow.com/verify?token=${token}`;
 
   const mailOptions = {
     from: process.env.EMAIL_USER,
