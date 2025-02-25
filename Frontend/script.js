@@ -95,6 +95,7 @@ const openPlanModalBtn = document.querySelectorAll(".openPlanModalBtn");
           event.preventDefault(); // Prevent default form submission
       
           const name = document.getElementById("name").value;
+          const number = document.getElementById("number").value;
           const email = document.getElementById("email").value;
           const pack = document.getElementById("selectedPlanLabel").value;
       
@@ -103,7 +104,7 @@ const openPlanModalBtn = document.querySelectorAll(".openPlanModalBtn");
             headers: {
               "Content-Type": "application/json"
             },
-            body: JSON.stringify({ name, email, pack })
+            body: JSON.stringify({ name, number, email, pack })
           });
       
           const result = await response.json();
