@@ -118,15 +118,16 @@ app.get('/verify', async (req, res) => {
   const { token } = req.query;
 
   if (!token) {
-    return res.status(400).send('Token is required.');
+    // return res.status(400).send('Token is required.');
+    return res.redirect(`https://ibrandnow.com/redirect.html?status=error`);
   }
 
-  const db = admin.firestore();
   const tokenRef = db.collection('tokens').doc(token);
   const tokenDoc = await tokenRef.get();
 
   if (!tokenDoc.exists) {
-    return res.status(400).send('Invalid or expired token.');
+    // return res.status(400).send('Invalid or expired token.');
+    return res.redirect(`https://ibrandnow.com/redirect.html?status=error`);
   }
 
   const userData = tokenDoc.data();
@@ -144,7 +145,7 @@ app.get('/verify', async (req, res) => {
   //   </html>
   // `);
 
-  res.status(200).redirect(`/success.html?token=${token}`);
+  res.redirect(`https://ibrandnow.com/redirect.html?status=success`);
 });
 
 // Start server
