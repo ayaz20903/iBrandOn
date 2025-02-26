@@ -104,12 +104,12 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("myForm").addEventListener("submit", async function (event) {
     event.preventDefault(); // Prevent default form submission
 
-    let submitBtn = document.getElementById("submitBtn");
+    // let submitBtn = document.getElementById("submitBtn");
     // let modal = document.getElementById("planModal");
     const name = document.getElementById("name").value;
     const number = document.getElementById("number").value;
     const email = document.getElementById("email").value;
-    const plan = document.getElementById("selectedPlanLabel").value;
+    const plan = document.getElementById("selectedPlanLabel").innerText;
 
     submitBtn.disabled = true;
     submitBtn.style.opacity = "0.6";
@@ -125,6 +125,8 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       body: JSON.stringify({ name, number, email, plan })
     });
+
+    console.log(name, number, email, plan)
 
     const result = await response.json();
     alert(result.message);
