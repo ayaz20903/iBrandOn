@@ -59,8 +59,50 @@ app.post('/submit-form', async (req, res) => {
   const mailOptions = {
     from: process.env.EMAIL_USER,
     to: email,
-    subject: 'Please verify your email',
-    text: `Click here to verify: ${verificationLink}`
+    subject: 'Confirm Your Email',
+    // text: `Click here to verify: ${verificationLink}`
+    html: `
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Verification</title>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f4f4f4;">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #f4f4f4; height: 100vh; text-align: center;">
+    <tr>
+      <td align="center" style="padding: 20px;">
+        <!-- Email Container -->
+        <table width="400" border="0" cellspacing="0" cellpadding="0" style="background-color: #ffffff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); text-align: center;">
+          <tr>
+            <td style="padding: 20px;">
+              <h1 style="font-size: 24px; color: #333333; font-family: Arial, sans-serif; margin: 0 0 20px;">Welcome to iBrandNow</h1>
+              <p style="font-size: 16px; color: #555555; font-family: Arial, sans-serif; margin: 0 0 30px;">
+                Please click the button below to verify your email address.
+              </p>
+              <a href="${verificationLink}" style="display: inline-block; background-color: #28a745; color: #ffffff; text-decoration: none; padding: 12px 20px; border-radius: 5px; font-size: 16px; font-family: Arial, sans-serif;">
+                Verify Email Address
+              </a>
+              <p style="font-size: 14px; color: #888888; font-family: Arial, sans-serif; margin: 20px 0 0;">
+                If you did not create an account, no further action is required.
+              </p>
+              <p style="font-size: 14px; color: #888888; font-family: Arial, sans-serif; margin: 20px 0 0;">
+                If you're having trouble clicking the button, copy and paste the URL below into your web browser:<br>
+                <a href="${verificationLink}" style="color: #007bff; text-decoration: none;">
+                ${verificationLink}
+                </a>
+              </p>
+            </td>
+          </tr>
+        </table>
+        <!-- End Email Container -->
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+`,
   };
   console.log(mailOptions)
   transporter.sendMail(mailOptions, (err, info) => {
@@ -102,7 +144,7 @@ app.get('/verify', async (req, res) => {
   //   </html>
   // `);
 
-  res.status(200).redirect(`/verifytoken.html?token=${token}`);
+  res.status(200).redirect(`/success.html?token=${token}`);
 });
 
 // Start server
