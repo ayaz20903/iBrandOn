@@ -1,6 +1,6 @@
 const express = require('express');
 require('dotenv').config();
-const {db} = require('./config/firebase');
+const { db } = require('./config/firebase');
 const crypto = require('crypto');
 const nodemailer = require('nodemailer');
 const path = require('path');
@@ -31,15 +31,15 @@ app.get("/", (req, res) => {
 
 
 app.post('/submit-form', async (req, res) => {
-  const { name, email, number , plan } = req.body;
+  const { name, email, number, plan } = req.body;
 
   if (!name || !email || !number || !plan) {
     return res.status(400).json({ message: 'Name, Email and Number are required.' });
   }
   try {
-    
+
   } catch (error) {
-    
+
   }
   const token = crypto.randomBytes(16).toString('hex');
 

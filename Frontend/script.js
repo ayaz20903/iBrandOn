@@ -340,7 +340,6 @@ function attachEventListeners() {
   });
 }
 
-
 document.querySelectorAll(".tab-btn").forEach(button => {
   button.addEventListener("click", function () {
     // Reset all buttons

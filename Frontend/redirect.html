@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iBrandOn - Email Confirmation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const params = new URLSearchParams(window.location.search);
+            const status = params.get("status"); 
+
+            const messageElement = document.getElementById("message");
+            const descriptionElement = document.getElementById("description");
+
+            if (status === "success") {
+                messageElement.textContent = "Email Confirmed Successfully!";
+                descriptionElement.textContent = "Thank you for confirming your email.";
+            } else {
+                messageElement.textContent = "Error! Please try again.";
+                descriptionElement.textContent = "There was an issue confirming your email.";
+            }
+        });
+    </script>
+</head>
+
+<body class="flex flex-col items-center justify-center min-h-screen">
+    <div class="flex flex-col items-center justify-center min-h-screen text-center">
+        <h2 id="message" class="text-4xl font-bold"></h2>
+        <p id="description" class="text-gray-700 my-5"></p>
+        <a href="index.html"
+        class=" bg-[#5283C2] text-white w-full p-4 rounded-md font-bold transition-all duration-300"
+       >Go to home page</a>
+      </div>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="script.js"></script>
+
+</html>
