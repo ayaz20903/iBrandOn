@@ -121,7 +121,6 @@ app.get('/verify', async (req, res) => {
     return res.status(400).send('Token is required.');
   }
 
-  const db = admin.firestore();
   const tokenRef = db.collection('tokens').doc(token);
   const tokenDoc = await tokenRef.get();
 
@@ -144,7 +143,7 @@ app.get('/verify', async (req, res) => {
   //   </html>
   // `);
 
-  res.status(200).redirect(`/success.html?token=${token}`);
+  res.redirect(`https://ibrandnow.com/success.html`);
 });
 
 // Start server
