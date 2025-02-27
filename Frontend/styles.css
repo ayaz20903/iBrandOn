@@ -2,41 +2,50 @@
 
 body {
     font-family: "Josefin Sans", sans-serif;
-      /* background-image: url(/assets/images/hero-bg.png), url('/assets/images/hero-bg1.png');
+    /* background-image: url(/assets/images/hero-bg.png), url('/assets/images/hero-bg1.png');
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat; */
 }
+html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
 
-h2{
+h2 {
     color: #5283C2;
 }
 
 @keyframes spin-slow {
-    0% { transform: rotateX(0deg); }
-    100% { transform: rotateX(360deg); }
+    0% {
+        transform: rotateX(0deg);
+    }
+
+    100% {
+        transform: rotateX(360deg);
+    }
 }
+
 .animate-spin-slow {
     animation: spin-slow 5s linear infinite;
     transform-origin: center;
-
 }
 
-.hero{
+.hero {
     /* background-image: url(/assets/images/hero-bg.png);
     background-position: right;
     background-size: contain;
     background-repeat: no-repeat; */
 }
 
-.button-primary{
-    background: #ffffff ;
+.button-primary {
+    background: #ffffff;
     color: #5283C2;
     border: 1px solid #5283C2;
     width: 100%;
     border-radius: 7px;
     transition: all 0.2s;
-    
+
 }
 
 /* .button-primary:hover{
@@ -48,8 +57,8 @@ h2{
 } */
 
 
-.button-secondary{
-    background: #5283C2 ;
+.button-secondary {
+    background: #5283C2;
     color: #ffffff;
     width: 100%;
     border-radius: 7px;
@@ -63,7 +72,7 @@ h2{
     border: 1px solid #5283C2;
 } */
 
-   
+
 /* .button-primary {
     display: block;
     width: 100%;
@@ -77,11 +86,35 @@ h2{
 .price-card:hover .button-primary {
     color: #ffffff;
     background-color: #5283C2;
-}   
+}
 
 
 
-.struggling-container{
+.struggling-container {
     /* background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(0,152,219,1) 100%); */
-    background:radial-gradient(circle, rgb(255 255 255) 0%, rgb(60 176 227) 30%, rgb(0 152 219) 45%)
+    background: radial-gradient(circle, rgb(255 255 255) 0%, #094e75 30%, #094e75 45%);
+    /* background:radial-gradient(circle, rgb(255 255 255) 0%, rgb(60 176 227) 30%, rgb(0 152 219) 45%); */
+
+}
+
+
+.slider{
+    scroll-snap-align: center;
+}
+
+#service-container {
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+#service-container>div {
+    scroll-snap-align: start;
+    transition: transform 0.3s ease;
+}
+
+body {
+    overflow-x: hidden;
+    /* Prevent horizontal scroll */
+    /* background: linear-gradient(180deg, rgba(0,0,0,1) 40%, rgba(9,78,117,1) 100%); */
+
 }
