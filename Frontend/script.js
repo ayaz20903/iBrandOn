@@ -81,11 +81,17 @@ openPlanModalBtn.forEach(button => {
   button.addEventListener("click", () => {
     const price = button.getAttribute("data-price");
     const plan = button.getAttribute("data-plan");
-    const fullPlanDetails = `${price} - ${plan}`;
+    const fullPlanDetails = price && plan ? `${price} - ${plan}` : null;
 
     // Update modal content
     // selectedPlanInput.value = fullPlanDetails;
-    selectedPlanLabel.textContent = `Selected Plan: ${fullPlanDetails}`;
+    if (fullPlanDetails) {
+      selectedPlanLabel.textContent = `Selected Plan: ${fullPlanDetails}`;
+      selectedPlanLabel.style.display = "block"; // Ensure it's visible
+  } else {
+      selectedPlanLabel.style.display = "none"; // Hide if null
+  }
+    // selectedPlanLabel.textContent = `Selected Plan: ${fullPlanDetails}`;
 
     // Show modal
     modal.classList.remove("hidden");
@@ -362,6 +368,26 @@ document.querySelectorAll(".tab-btn").forEach(button => {
     startQuiz(type, baseScore);
   });
 });
+
+const words = ["a Solo Entrepreneur", "a Visionary", "an Innovator", "a Leader" , "a Dreamer"];
+let index = 0;
+const changingText = document.getElementById("changingText");
+
+function changeText() {
+    // Fade out
+    changingText.classList.add("opacity-0");
+
+    setTimeout(() => {
+        // Change the text after fade-out
+        changingText.textContent = words[index];
+        index = (index + 1) % words.length;
+
+        // Fade in
+        changingText.classList.remove("opacity-0");
+    }, 500); // Match with CSS transition duration
+}
+
+setInterval(changeText, 2000); // Change text every 2 seconds
 
 // const monthlyBtn = document.getElementById('monthlyBtn');
 //         const yearlyBtn = document.getElementById('yearlyBtn');

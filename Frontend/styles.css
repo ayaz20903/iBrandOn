@@ -99,7 +99,7 @@ h2 {
 
 
 .slider{
-    scroll-snap-align: center;
+    scroll-snap-align: start;
 }
 
 #service-container {
